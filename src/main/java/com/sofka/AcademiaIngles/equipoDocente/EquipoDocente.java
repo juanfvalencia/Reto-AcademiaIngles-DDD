@@ -6,13 +6,17 @@ import com.sofka.AcademiaIngles.equipoDocente.event.*;
 import com.sofka.AcademiaIngles.equipoDocente.value.*;
 import com.sofka.AcademiaIngles.generics.Email;
 import com.sofka.AcademiaIngles.generics.Nombre;
+import com.sofka.AcademiaIngles.nivel.value.NivelId;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import java.util.Set;
 
 
 public class EquipoDocente extends AggregateEvent<EquipoDocenteId> {
 
+    protected Set<NivelId> niveles;
     protected DocenteEscritura docenteEscritura;
     protected DocenteEscucha docenteEscucha;
     protected DocenteHabla docenteHabla;
@@ -63,6 +67,11 @@ public class EquipoDocente extends AggregateEvent<EquipoDocenteId> {
         appendChange(new DocenteLecturaAgregado(id, nombre, email)).apply();
     }
 
+    public void agregarNivelId(NivelId nivelId){
+        Objects.requireNonNull(nivelId);
+        appendChange(new NivelAgregado(nivelId)).apply();
+    }
+
     public void actualizarEmailDocenteEscritura(DocenteEscrituraId entityId, Email email){
         Objects.requireNonNull(entityId);
         Objects.requireNonNull(email);
@@ -85,6 +94,17 @@ public class EquipoDocente extends AggregateEvent<EquipoDocenteId> {
         Objects.requireNonNull(entityId);
         Objects.requireNonNull(email);
         appendChange(new EmailDocenteLecturaActualizado(entityId, email)).apply();
+    }
+
+    public Optional<NivelId> getConsulta(NivelId entityId){
+        return niveles
+                .stream()
+                .filter(consulta -> consulta.equals(entityId))
+                .findFirst();
+    }
+
+    public Set<NivelId> getNiveles() {
+        return niveles;
     }
 
     public DocenteEscritura docenteEscritura(){

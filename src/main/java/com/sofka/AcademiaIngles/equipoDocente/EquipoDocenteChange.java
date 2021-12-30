@@ -35,20 +35,16 @@ public class EquipoDocenteChange extends EventChange {
             );
         });
 
-        apply((DocenteHablaAgregado event)->{
-            equipoDocente.docenteHabla = new DocenteHabla(
-                    event.getDocenteHablaId(),
-                    event.getNombre(),
-                    event.getEmail()
-            );
-        });
-
         apply((DocenteLecturaAgregado event)->{
             equipoDocente.docenteLectura = new DocenteLectura(
                     event.getDocenteLecturaId(),
                     event.getNombre(),
                     event.getEmail()
             );
+        });
+
+        apply((NivelAgregado event) ->{
+            equipoDocente.niveles.add(event.getNivelId());
         });
 
         apply((EmailDocenteEscrituraActualizado event)->{

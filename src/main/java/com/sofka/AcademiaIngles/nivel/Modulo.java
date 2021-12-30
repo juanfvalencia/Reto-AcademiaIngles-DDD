@@ -35,11 +35,6 @@ public class Modulo extends Entity<ModuloId> {
         this.tarea = tarea;
     }
 
-    public void agregarPractica(Practica practica){
-        Objects.requireNonNull(practica);
-        this.practica = practica;
-    }
-
     public void actualizarPractica(Practica practica){
         Objects.requireNonNull(practica);
         this.practica = practica;
