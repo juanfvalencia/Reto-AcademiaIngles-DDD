@@ -9,27 +9,27 @@ import java.util.Set;
 
 public class Metodologia extends Entity<MetodologiaId>{
 
-    protected Set<PodCast> podCasts;
-    protected Set<ClaseEnVivo> claseEnVivos;
+    protected PodCast podCast;
+    protected ClaseEnVivo claseEnVivo;
     protected VoiceChat voiceChat;
     protected Reto reto;
 
-    public Metodologia(MetodologiaId entityId, VoiceChat voiceChat, Reto reto) {
+    public Metodologia(MetodologiaId entityId, PodCast podCast, ClaseEnVivo claseEnVivo, VoiceChat voiceChat, Reto reto) {
         super(entityId);
-        this.podCasts = new HashSet<>();
-        this.claseEnVivos = new HashSet<>();
+        this.podCast = Objects.requireNonNull(podCast);
+        this.claseEnVivo = Objects.requireNonNull(claseEnVivo);
         this.voiceChat = Objects.requireNonNull(voiceChat);
         this.reto = Objects.requireNonNull(reto);
     }
 
-    public void agregarPodcast(PodCast podCast){
+    public void actualizarPodcast(PodCast podCast){
         Objects.requireNonNull(podCast);
-        this.podCasts.add(podCast);
+        this.podCast = podCast;
     }
 
-    public void agregarLiveClass(ClaseEnVivo claseEnVivo){
+    public void actualizarLiveClass(ClaseEnVivo claseEnVivo){
         Objects.requireNonNull(claseEnVivo);
-        this.claseEnVivos.add(claseEnVivo);
+        this.claseEnVivo = claseEnVivo;
     }
 
     public void actualizarVoiceChat(VoiceChat voiceChat){
@@ -37,17 +37,17 @@ public class Metodologia extends Entity<MetodologiaId>{
         this.voiceChat = voiceChat;
     }
 
-    public void agregarReto(Reto reto){
+    public void actualizarReto(Reto reto){
         Objects.requireNonNull(reto);
         this.reto = reto;
     }
 
-    public Set<PodCast> podCasts(){
-        return podCasts;
+    public PodCast podCast(){
+        return podCast;
     }
 
-    public Set<ClaseEnVivo> claseEnVivos(){
-        return claseEnVivos;
+    public ClaseEnVivo claseEnVivo(){
+        return claseEnVivo;
     }
 
     public VoiceChat voiceChat(){
