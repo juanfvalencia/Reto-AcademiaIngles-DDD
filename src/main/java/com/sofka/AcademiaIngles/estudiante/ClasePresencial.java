@@ -1,20 +1,20 @@
 package com.sofka.AcademiaIngles.estudiante;
 
 import co.com.sofka.domain.generic.Entity;
-import com.sofka.AcademiaIngles.estudiante.value.ClasePresencialPorDiaId;
+import com.sofka.AcademiaIngles.estudiante.value.ClasePresencialId;
 import com.sofka.AcademiaIngles.estudiante.value.Fecha;
 import com.sofka.AcademiaIngles.estudiante.value.Horario;
 import com.sofka.AcademiaIngles.estudiante.value.Sede;
 
 import java.util.Objects;
 
-public class ClasePresencialPorDia extends Entity<ClasePresencialPorDiaId> {
+public class ClasePresencial extends Entity<ClasePresencialId> {
 
     protected Sede sede;
     protected Fecha fecha;
     protected Horario horario;
 
-    public ClasePresencialPorDia(ClasePresencialPorDiaId entityId, Sede sede, Fecha fecha, Horario horario) {
+    public ClasePresencial(ClasePresencialId entityId, Sede sede, Fecha fecha, Horario horario) {
         super(entityId);
         this.sede = Objects.requireNonNull(sede);
         this.fecha = Objects.requireNonNull(fecha);

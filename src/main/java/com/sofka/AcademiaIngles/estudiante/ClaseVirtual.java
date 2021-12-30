@@ -1,16 +1,16 @@
 package com.sofka.AcademiaIngles.estudiante;
 
 import co.com.sofka.domain.generic.Entity;
-import com.sofka.AcademiaIngles.estudiante.value.ClaseVirtualPorDiaId;
+import com.sofka.AcademiaIngles.estudiante.value.ClaseVirtualId;
 import com.sofka.AcademiaIngles.estudiante.value.Horario;
 
 import java.util.Objects;
 
-public class ClaseVirtualPorDia extends Entity<ClaseVirtualPorDiaId> {
+public class ClaseVirtual extends Entity<ClaseVirtualId> {
 
     protected Horario horario;
 
-    public ClaseVirtualPorDia(ClaseVirtualPorDiaId entityId, Horario horario) {
+    public ClaseVirtual(ClaseVirtualId entityId, Horario horario) {
         super(entityId);
         this.horario = Objects.requireNonNull(horario);
     }

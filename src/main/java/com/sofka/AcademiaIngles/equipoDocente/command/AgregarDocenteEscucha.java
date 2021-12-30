@@ -13,9 +13,9 @@ public class AgregarDocenteEscucha extends Command {
     private final Nombre nombre;
     private final Email email;
 
-    public AgregarDocenteEscucha(DocenteEscuchaId docenteEscuchaId, EquipoDocenteId entityId, Nombre nombre, Email email) {
-        this.docenteEscuchaId = docenteEscuchaId;
-        this.equipoDocenteId = entityId;
+    public AgregarDocenteEscucha(DocenteEscuchaId entityId, EquipoDocenteId equipoDocenteId, Nombre nombre, Email email) {
+        this.docenteEscuchaId = entityId;
+        this.equipoDocenteId = equipoDocenteId;
         this.nombre = nombre;
         this.email = email;
     }

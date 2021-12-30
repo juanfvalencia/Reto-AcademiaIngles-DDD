@@ -11,9 +11,9 @@ public class ActualizarEmailDocenteEscucha extends Command {
     private final DocenteEscuchaId docenteEscuchaId;
     private final Email email;
 
-    public ActualizarEmailDocenteEscucha(DocenteEscuchaId docenteEscuchaId, EquipoDocenteId entityId, Email email) {
-        this.docenteEscuchaId = docenteEscuchaId;
-        this.equipoDocenteId = entityId;
+    public ActualizarEmailDocenteEscucha(DocenteEscuchaId entityId, EquipoDocenteId equipoDocenteId, Email email) {
+        this.docenteEscuchaId = entityId;
+        this.equipoDocenteId = equipoDocenteId;
         this.email = email;
     }
 

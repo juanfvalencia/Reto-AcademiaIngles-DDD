@@ -12,9 +12,9 @@ public class ActualizarEmailDocenteLectura extends Command {
     private final DocenteLecturaId docenteLecturaId;
     private final Email email;
 
-    public ActualizarEmailDocenteLectura(DocenteLecturaId docenteLecturaId, EquipoDocenteId entityId, Email email) {
-        this.docenteLecturaId = docenteLecturaId;
-        this.equipoDocenteId = entityId;
+    public ActualizarEmailDocenteLectura(DocenteLecturaId entityId, EquipoDocenteId equipoDocenteId, Email email) {
+        this.docenteLecturaId = entityId;
+        this.equipoDocenteId = equipoDocenteId;
         this.email = email;
     }
 
